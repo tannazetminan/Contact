@@ -22,11 +22,11 @@ fetch('database.json')
       const startIndex = (currentPage - 1) * pageSize;
       const endIndex = startIndex + pageSize;
       const currentPageData = users.slice(startIndex, endIndex);
-      let totalPerson =0;
+      // let totalPerson =0;
 
       // Display the current page data
       currentPageData.forEach((user) => {
-        totalPerson += 1;
+        // totalPerson += 1;
         const userDiv = document.createElement('div');
         userDiv.innerHTML = `
           <li class="contact-item cf">
@@ -43,7 +43,7 @@ fetch('database.json')
         pageContainer.appendChild(userDiv);
       });
 
-      document.getElementById('totalPerson').innerText = "Total: " + totalPerson;
+      document.getElementById('totalPerson').innerText = "Total: " + users.length;
       // Generate pagination buttons
       for (let i = 1; i <= totalPages; i++) {
         const listItem = document.createElement('li');
